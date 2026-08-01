@@ -1,7 +1,7 @@
 <p align="center"><a href="https://vicena.ai"><strong>VICENA</strong></a></p>
 <p align="center"><strong>Built with Vicena</strong><br>Vicena is a scientific research workspace that combines AI-assisted research, durable project files, Jupyter notebooks, reproducible computation, literature tools, and protected remote scientific compute in one environment.</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-31d5c8.svg)](LICENSE) [![Python](https://img.shields.io/badge/Python-3.10%2B-101b35.svg)](pyproject.toml) [![Tests](https://github.com/vicena-labs/battery-degradation-state-of-health-digital-twin/actions/workflows/tests.yml/badge.svg)](https://github.com/vicena-labs/battery-degradation-state-of-health-digital-twin/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-31d5c8.svg)](LICENSE) [![Python](https://img.shields.io/badge/Python-3.10%2B-101b35.svg)](pyproject.toml)
 
 # Battery Degradation and State-of-Health Digital Twin
 
