@@ -1,0 +1,12 @@
+{
+  "exponential": {
+    "n_conditions": 10,
+    "mae_cycles": 9.262667789461693,
+    "median_ae_cycles": 7.704488182457191
+  },
+  "linear": {
+    "n_conditions": 10,
+    "mae_cycles": 10.284887013984616,
+    "median_ae_cycles": 8.282966522416071
+  }
+}

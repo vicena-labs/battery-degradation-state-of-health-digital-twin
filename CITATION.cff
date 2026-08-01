@@ -2,7 +2,7 @@ cff-version: 1.2.0
 title: Battery Degradation and State-of-Health Digital Twin
 message: Cite this software and the dataset DOI used by your workflow.
 type: software
-version: 0.2.0
+version: 0.3.0
 date-released: 2026-08-01
 license: MIT
 repository-code: https://github.com/vicena-labs/battery-degradation-state-of-health-digital-twin
@@ -13,3 +13,7 @@ references:
   - type: dataset
     title: Experimental Calendar Ageing Data for Lithium-Ion Battery Chemistries
     doi: 10.5281/zenodo.6685365
+
+  - type: dataset
+    title: Dataset for Experimental Study on Cycle Aging of 3.4 Ah Lithium-Sulfur Pouch Cells
+    doi: 10.5281/zenodo.16527416

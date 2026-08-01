@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"Cycle-aging condition summary","type":"object","required":["condition","cycle","soh","soh_errorbar"],"properties":{"condition":{"type":"string","minLength":1},"cycle":{"type":"number","minimum":0},"soh":{"type":"number","minimum":0,"maximum":1.2},"soh_errorbar":{"type":"number","minimum":0}}}

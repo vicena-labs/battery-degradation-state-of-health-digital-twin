@@ -11,7 +11,7 @@ An open-source battery research twin for SOC, terminal voltage, heat generation,
 
 [![Battery twin one-page overview](assets/battery-degradation-state-of-health-digital-twin-onepager.png)](Battery_Degradation_State_of_Health_Digital_Twin_OnePager.pdf)
 
-## What release 0.2.0 provides
+## What release 0.3.0 provides
 
 - Level 0: executable 1RC Thevenin equivalent-circuit model, Coulomb SOC, irreversible heat generation, lumped thermal response, and synthetic aging scenarios.
 - Level 1: measured calendar-aging ingestion for LCO, LFP, LMO, LTO, NCA, and NMC cells.
@@ -29,6 +29,12 @@ An open-source battery research twin for SOC, terminal voltage, heat generation,
 
 Current uncertainty evidence: nominal 90% conformal intervals achieved 95.9% empirical coverage on 121 records from 27 held-out trajectories. The grouped bootstrap 95% interval for MAE is 0.0230 to 0.0345. This is internal held-out evidence from the same published experimental program, not independent Level 2 validation.
 
+## New in v0.3.0: measured cycle-aging and RUL
+
+A second measured experimental program adds ten lithium-sulfur cycle-aging condition trajectories covering temperature and current-rate studies. Linear and exponential early-cycle models use measurements only through cycle 60 and predict the later 80% normalized-capacity crossing. Exponential MAE is 9.26 cycles and median absolute error is 7.70 cycles across ten condition trajectories. Linear MAE is 10.28 cycles.
+
+This is Level 1+ temporal holdout evidence. The source publishes condition-level means rather than individual physical-cell trajectories, and all curves belong to one campaign. It is not cross-campaign Level 2 validation and does not establish performance for conventional lithium-ion cells.
+
 ## Scientific status
 
 | Component | Level | Evidence | Boundary |
@@ -39,6 +45,7 @@ Current uncertainty evidence: nominal 90% conformal intervals achieved 95.9% emp
 | Uncertainty layer | 1 | Group-aware conformal and bootstrap evaluation | Same experimental program, not external validation |
 | Decision screen | 0 | Reproducible sensitivity and Pareto workflow | Synthetic objectives only |
 | Calendar-aging SOH model | 1 | 478 measured records, 108 cell-condition trajectories, 27 held-out groups | Dataset conditions only |
+| Li-S early-cycle RUL | 1+ | Ten measured condition summaries with future cycles withheld | Condition means, one campaign, Li-S only |
 
 Held-out SOH results: MAE 0.0285, RMSE 0.0363, R2 0.644. The mean-training-SOH baseline MAE is 0.0444. These are repository run results, not universal performance claims. This release is not pack-level, online BMS, safety certification, or production validation.
 
@@ -70,7 +77,7 @@ battery-twin validate --output outputs/validation.csv
 pytest -q
 ```
 
-Expected result: one synthetic profile, measured held-out predictions, printed metrics, and seven passing tests.
+Expected result: one synthetic profile, measured held-out predictions, printed metrics, and ten passing tests.
 
 ## Full research workflow
 
@@ -79,7 +86,7 @@ Run the executed notebooks in order:
 1. `notebooks/01_level0_electrothermal_twin.ipynb`
 2. `notebooks/02_level1_measured_validation.ipynb`
 
-Then use `scripts/run_complete_workflow.py`, `scripts/run_validation.py`, and `scripts/make_onepager.py` to regenerate reported artifacts. See [getting started](docs/getting-started.md), [model card](docs/model-card.md), [validation guide](docs/validation.md), and [R&D roadmap](docs/roadmap.md).
+Then use `scripts/run_complete_workflow.py`, `scripts/run_validation.py`, and `scripts/make_onepager.py` to regenerate reported artifacts. See [getting started](docs/getting-started.md), [model card](docs/model-card.md), [validation guide](docs/validation.md), [RUL validation](docs/rul-validation.md), and [R&D roadmap](docs/roadmap.md).
 
 ## Upload your own data
 
