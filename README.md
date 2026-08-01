@@ -11,12 +11,23 @@ An open-source battery research twin for SOC, terminal voltage, heat generation,
 
 [![Battery twin one-page overview](assets/battery-degradation-state-of-health-digital-twin-onepager.png)](Battery_Degradation_State_of_Health_Digital_Twin_OnePager.pdf)
 
-## What release 0.1.0 provides
+## What release 0.2.0 provides
 
 - Level 0: executable 1RC Thevenin equivalent-circuit model, Coulomb SOC, irreversible heat generation, lumped thermal response, and synthetic aging scenarios.
 - Level 1: measured calendar-aging ingestion for LCO, LFP, LMO, LTO, NCA, and NMC cells.
 - Leakage-controlled validation: entire cell-condition trajectories are held out.
 - Research artifacts: executed notebooks, CSV and JSON results, tested Python package, data schema, model card, validation guide, and reproducible A4 one pager.
+
+## Complete R&D capabilities in v0.2.0
+
+- Synthetic pack aggregation with configurable series and parallel topology, cell capacity variation, resistance variation, SOC imbalance, weakest-cell voltage, maximum temperature, and pack power.
+- Group-aware split-conformal SOH intervals and grouped bootstrap confidence intervals for held-out MAE.
+- Deterministic upload validation with explicit units, range checks, missing-field rejection, and duplicate detection.
+- Temperature, storage-SOC, and cycling sensitivity sweeps.
+- Pareto retention of throughput versus synthetic SOH policies, clearly labeled as Level 0 decision screening.
+- A single complete-workflow script and executed notebook that regenerate machine-readable outputs and figures.
+
+Current uncertainty evidence: nominal 90% conformal intervals achieved 95.9% empirical coverage on 121 records from 27 held-out trajectories. The grouped bootstrap 95% interval for MAE is 0.0230 to 0.0345. This is internal held-out evidence from the same published experimental program, not independent Level 2 validation.
 
 ## Scientific status
 
@@ -24,6 +35,9 @@ An open-source battery research twin for SOC, terminal voltage, heat generation,
 |---|---:|---|---|
 | Electro-thermal model | 0 | Executable synthetic checks | Illustrative parameters, not cell-calibrated |
 | Aging scenario model | 0 | Monotonicity and range tests | Scenario generator, not a mechanistic degradation law |
+| Pack variability model | 0 | Deterministic synthetic scenario checks | Not calibrated to a named pack |
+| Uncertainty layer | 1 | Group-aware conformal and bootstrap evaluation | Same experimental program, not external validation |
+| Decision screen | 0 | Reproducible sensitivity and Pareto workflow | Synthetic objectives only |
 | Calendar-aging SOH model | 1 | 478 measured records, 108 cell-condition trajectories, 27 held-out groups | Dataset conditions only |
 
 Held-out SOH results: MAE 0.0285, RMSE 0.0363, R2 0.644. The mean-training-SOH baseline MAE is 0.0444. These are repository run results, not universal performance claims. This release is not pack-level, online BMS, safety certification, or production validation.
@@ -56,7 +70,7 @@ battery-twin validate --output outputs/validation.csv
 pytest -q
 ```
 
-Expected result: one synthetic profile, measured held-out predictions, printed metrics, and three passing tests.
+Expected result: one synthetic profile, measured held-out predictions, printed metrics, and seven passing tests.
 
 ## Full research workflow
 
@@ -65,7 +79,7 @@ Run the executed notebooks in order:
 1. `notebooks/01_level0_electrothermal_twin.ipynb`
 2. `notebooks/02_level1_measured_validation.ipynb`
 
-Then use `scripts/run_validation.py` and `scripts/make_onepager.py` to regenerate reported artifacts. See [getting started](docs/getting-started.md), [model card](docs/model-card.md), [validation guide](docs/validation.md), and [R&D roadmap](docs/roadmap.md).
+Then use `scripts/run_complete_workflow.py`, `scripts/run_validation.py`, and `scripts/make_onepager.py` to regenerate reported artifacts. See [getting started](docs/getting-started.md), [model card](docs/model-card.md), [validation guide](docs/validation.md), and [R&D roadmap](docs/roadmap.md).
 
 ## Upload your own data
 

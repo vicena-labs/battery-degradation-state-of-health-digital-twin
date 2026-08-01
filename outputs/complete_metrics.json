@@ -1,0 +1,32 @@
+{
+  "level1": {
+    "n_rows": 478,
+    "n_groups": 108,
+    "train_groups": 81,
+    "test_groups": 27,
+    "mae": 0.02846238817205229,
+    "rmse": 0.03632376629901407,
+    "r2": 0.6443601279348088,
+    "baseline_mae": 0.044412429582970835
+  },
+  "conformal": {
+    "alpha": 0.1,
+    "interval_half_width": 0.0621001983813152,
+    "empirical_coverage": 0.9586776859504132,
+    "test_rows": 121,
+    "test_groups": 27
+  },
+  "bootstrap": {
+    "mae_point": 0.02846238817205229,
+    "mae_ci95_low": 0.022954301807154454,
+    "mae_ci95_high": 0.03450482781607316,
+    "bootstrap_replicates": 200
+  },
+  "pack": {
+    "series_cells": 12,
+    "parallel_cells": 2,
+    "max_temperature_c": 26.55476909419434,
+    "max_soc_spread": 0.06374035435439263,
+    "min_cell_voltage_v": 3.4455930401525188
+  }
+}
