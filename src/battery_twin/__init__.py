@@ -4,4 +4,6 @@ from .pack import PackParameters,simulate_pack
 from .uncertainty import conformal_evaluate,grouped_bootstrap_metrics
 from .decision import stress_sensitivity,pareto_policies
 from .data_validation import validate_csv
-__version__='0.2.0'
+__version__='0.3.0'
+
+from .rul import load_lis_cycle_capacity,observed_eol,forecast_eol,benchmark_rul

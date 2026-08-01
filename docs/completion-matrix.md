@@ -13,3 +13,6 @@
 | Uploaded-data validation | Yes | Yes, including invalid input | Support | Data contract |
 | Independent campaign validation | No | No | Planned Level 2 | Roadmap |
 | Online BMS or fleet deployment | No | No | Out of scope | Model card |
+| Li-S measured cycle-aging ingestion | Yes | Yes | 1+ | Notebook 04 |
+| Early-cycle 80% SOH crossing forecast | Yes | Yes | 1+ | RUL metrics JSON |
+| Cross-campaign individual-cell RUL validation | No | No | Planned Level 2 | Roadmap |

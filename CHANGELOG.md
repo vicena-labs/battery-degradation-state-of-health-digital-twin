@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0, 2026-08-01
+
+- Added a second measured experimental program under CC BY 4.0.
+- Added parsing of ten Li-S cycle-aging condition summaries and file-level checksums.
+- Added temporally held-out linear and exponential forecasts of the 80% normalized-capacity crossing.
+- Added measured RUL benchmark outputs, tests, schema, executed notebook, and validation documentation.
+- Kept the result at Level 1+ because individual physical-cell identities and independent-campaign testing are unavailable.
+
 ## 0.2.0, 2026-08-01
 
 - Added configurable synthetic series-parallel pack aggregation and cell variability.
