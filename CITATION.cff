@@ -2,7 +2,7 @@ cff-version: 1.2.0
 title: Battery Degradation and State-of-Health Digital Twin
 message: Cite this software and the dataset DOI used by your workflow.
 type: software
-version: 0.1.0
+version: 0.2.0
 date-released: 2026-08-01
 license: MIT
 repository-code: https://github.com/vicena-labs/battery-degradation-state-of-health-digital-twin

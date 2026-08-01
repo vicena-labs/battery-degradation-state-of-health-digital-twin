@@ -13,3 +13,9 @@ A regularized polynomial regression estimates SOH from days, temperature, storag
 ## Limitations
 
 Parameters are not identified for a named commercial cell. The measured model represents calendar aging only. SOH above 1 can arise from measurement and formation variation and is retained. No pack imbalance, active thermal management, lithium plating, safety events, online filtering, or field telemetry is modeled.
+
+## Pack and uncertainty extensions in v0.2.0
+
+The pack layer applies seeded cell-to-cell capacity, resistance, and initial-SOC variation and aggregates parallel current and series voltage. It supports sensitivity and algorithm testing but is not calibrated. Split-conformal intervals use a separate group-disjoint calibration subset, and bootstrap resampling occurs at the cell-condition trajectory level rather than the row level. Coverage is empirical and conditional on the dataset scope.
+
+The decision layer enumerates temperature, storage SOC, and daily throughput scenarios using the synthetic aging law. Pareto labels therefore support experimental prioritization only.
