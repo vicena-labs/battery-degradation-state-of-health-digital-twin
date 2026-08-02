@@ -1,0 +1,15 @@
+{
+  "vicena_compute": {
+    "sdk_version": "0.6.1",
+    "gateway_configured": true,
+    "workflow": "managed ngspice self-contained simulation",
+    "submitted": false
+  },
+  "rowan": {
+    "sdk_version": "3.1.8",
+    "gateway_configured": true,
+    "example_workflow": "descriptors for ethylene carbonate",
+    "submitted": false
+  },
+  "reason_not_submitted": "Remote jobs can consume credits and require an explicit budget authorization."
+}

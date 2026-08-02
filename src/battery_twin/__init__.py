@@ -7,3 +7,4 @@ from .data_validation import validate_csv
 __version__='0.3.0'
 
 from .rul import load_lis_cycle_capacity,observed_eol,forecast_eol,benchmark_rul
+from .remote_compute import battery_ecm_ngspice_netlist,vicena_compute_sidecar,rowan_electrolyte_request,write_compute_examples

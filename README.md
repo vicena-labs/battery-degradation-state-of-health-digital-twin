@@ -11,7 +11,7 @@ An open-source battery research twin for SOC, terminal voltage, heat generation,
 
 [![Battery twin one-page overview](assets/battery-degradation-state-of-health-digital-twin-onepager.png)](Battery_Degradation_State_of_Health_Digital_Twin_OnePager.pdf)
 
-## What release 0.3.0 provides
+## What release 0.4.0 provides
 
 - Level 0: executable 1RC Thevenin equivalent-circuit model, Coulomb SOC, irreversible heat generation, lumped thermal response, and synthetic aging scenarios.
 - Level 1: measured calendar-aging ingestion for LCO, LFP, LMO, LTO, NCA, and NMC cells.
@@ -34,6 +34,16 @@ Current uncertainty evidence: nominal 90% conformal intervals achieved 95.9% emp
 A second measured experimental program adds ten lithium-sulfur cycle-aging condition trajectories covering temperature and current-rate studies. Linear and exponential early-cycle models use measurements only through cycle 60 and predict the later 80% normalized-capacity crossing. Exponential MAE is 9.26 cycles and median absolute error is 7.70 cycles across ten condition trajectories. Linear MAE is 10.28 cycles.
 
 This is Level 1+ temporal holdout evidence. The source publishes condition-level means rather than individual physical-cell trajectories, and all curves belong to one campaign. It is not cross-campaign Level 2 validation and does not establish performance for conventional lithium-ion cells.
+
+## More computation with Vicena Compute and Rowan
+
+Version 0.4.0 adds safe, inspectable remote-compute bridges:
+
+- **Vicena Compute:** a managed ngspice battery 1RC transient with explicit batch outputs and bounded resource limits.
+- **Rowan:** an idempotent electrolyte molecular-screening request, starting with ethylene carbonate descriptors and upgrade routes for solubility, conformers, and bounded quantum chemistry.
+- **Measured cycle aging:** ten Li-S condition trajectories and early-cycle prediction of the 80% normalized-capacity crossing.
+
+Run `python scripts/prepare_remote_compute.py` to verify SDKs and generate inputs without spending credits. See [the remote-compute guide](docs/remote-compute.md). Paid submissions are excluded from executable notebooks and require an explicit computation-credit budget.
 
 ## Scientific status
 
