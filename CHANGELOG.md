@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0, 2026-08-02
+
+- Added a safe Vicena Compute bridge for managed ngspice battery-ECM simulation.
+- Added a bounded Rowan electrolyte molecular-screening request with a stable task key.
+- Added SDK and gateway preflight reporting without remote submission or credit spend.
+- Added remote-compute tests, examples, documentation, and an executed inspection notebook.
+- Updated the public one pager to show local physics, measured RUL evidence, and both remote compute routes.
+
 ## 0.3.0, 2026-08-01
 
 - Added a second measured experimental program under CC BY 4.0.

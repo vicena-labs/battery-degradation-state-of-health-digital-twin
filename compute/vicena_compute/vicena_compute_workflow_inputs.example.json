@@ -1,0 +1,14 @@
+[
+  {
+    "attempt": 1,
+    "title": "Battery ECM transient",
+    "inputs": {
+      "netlist": "Battery 1RC Thevenin pulse response, illustrative parameters\nV_OCV ocv 0 3.70\nI_LOAD out 0 PULSE(0 3.0 1m 1u 1u 90.0 180.0)\nR0 ocv n1 0.032\nR1 n1 out 0.018\nC1 n1 out 2400.0\n.tran 0.3 180.0\n.print tran time v(out) v(n1)\n.measure tran v_terminal_mid FIND v(out) AT=60.0\n.measure tran v_terminal_min MIN v(out)\n.end\n"
+    },
+    "limits": {
+      "cpu_cores": 1,
+      "memory_mib": 1024,
+      "wall_seconds": 120
+    }
+  }
+]

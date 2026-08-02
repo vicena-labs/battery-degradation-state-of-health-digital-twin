@@ -1,0 +1,9 @@
+{
+  "provider": "rowan",
+  "workflow": "descriptors",
+  "initial_smiles": "O=C1OCO1",
+  "name": "battery-electrolyte-screen",
+  "max_vicena_credits": 100,
+  "submission": "requires explicit user authorization",
+  "task_key": "7b2e073b041558142ad3108f70cd965b673ab0df36a04611e75b13e935a794f3"
+}
